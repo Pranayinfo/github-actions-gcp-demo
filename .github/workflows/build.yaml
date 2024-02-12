@@ -25,5 +25,5 @@ jobs:
         GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
       run: |
         gcloud auth configure-docker us-central1-docker.pkg.dev
-        docker build -t us-central1-docker.pkg.dev/devops-projects-413506/docker-repo/nginx:latest .
-        docker push us-central1-docker.pkg.dev/devops-projects-413506/docker-repo/nginx:latest
+        docker build -t us-central1-docker.pkg.dev/devops-projects-413506/docker-repo/nginx:${{ github.run_number }} .
+        docker push us-central1-docker.pkg.dev/devops-projects-413506/docker-repo/nginx:${{ github.run_number }}
